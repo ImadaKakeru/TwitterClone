@@ -58,6 +58,7 @@ extension ProfileView{
     
     var actionButtons: some View{
         HStack(spacing: 12){
+            // HstackでのSpacerなので、右にSpaceを埋める形で下の内容を表示する。
             Spacer()
             
             Image(systemName: "bell.badge")
@@ -72,6 +73,7 @@ extension ProfileView{
                     .frame(width: 120, height: 32)
                 //色の指定。今回はテキストの色指定になる
                     .foregroundColor(.black)
+                    // overlayで重ねて表示する。.strokeを入れると、図形が塗りつぶされた状態では無く、図形の輪郭が表示される。
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray,lineWidth:0.75))
             }
         }
@@ -144,6 +146,7 @@ extension ProfileView{
                         .fontWeight(selectedFilter == item ? .semibold : .regular)
                         .foregroundColor(selectedFilter == item ? .black : .gray)
                     
+                    // Capsule()は楕円形の図形を表示するもの。ここでは、青色、高さ3の楕円をVstackで表示している。
                     if selectedFilter == item{
                         Capsule()
                             .foregroundColor(Color(.systemBlue))
