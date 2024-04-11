@@ -14,6 +14,7 @@ struct ExploreView: View {
                 ScrollView{
                     LazyVStack{
                         ForEach(0 ... 25, id: \.self){ _ in
+                            // UserRowViewにProfileViewに飛ぶリンクを作成する。
                             NavigationLink{
                                 ProfileView()
                             }label: {
