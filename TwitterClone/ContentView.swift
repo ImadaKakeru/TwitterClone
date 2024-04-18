@@ -9,7 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showMenu = false
+    // 環境全て使えるオブジェクト。環境の階層トップでイニシャライズする必要がある。
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
+        Group{
+            // if use no logged in
+            if viewModel.userSession == nil{
+                LoginView()
+            }else{
+                // have logged in
+                mainInterfaceView
+            }
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        //タイトルを表示するために使うっぽい。
+        NavigationView{
+            ContentView()
+        }
+    }
+}
+
+extension ContentView{
+    
+    var mainInterfaceView: some View{
         ZStack(alignment:.topLeading){
             MainTabView()
                 .navigationBarHidden(showMenu)
@@ -47,15 +74,6 @@ struct ContentView: View {
         }
         .onAppear{
             showMenu = false
-        }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        //タイトルを表示するために使うっぽい。
-        NavigationView{
-            ContentView()
         }
     }
 }

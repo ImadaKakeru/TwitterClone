@@ -12,6 +12,7 @@
 		082642792BD1659400F2B508 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 082642782BD1659400F2B508 /* FirebaseFirestore */; };
 		0826427B2BD1659400F2B508 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0826427A2BD1659400F2B508 /* FirebaseFirestoreSwift */; };
 		0826427D2BD1659400F2B508 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0826427C2BD1659400F2B508 /* FirebaseStorage */; };
+		0826427F2BD1690500F2B508 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826427E2BD1690500F2B508 /* AuthViewModel.swift */; };
 		089FF6342BC41432002601DA /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089FF6332BC41432002601DA /* TwitterCloneApp.swift */; };
 		089FF6362BC41432002601DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089FF6352BC41432002601DA /* ContentView.swift */; };
 		089FF6382BC41434002601DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089FF6372BC41434002601DA /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		082642732BD1646700F2B508 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		0826427E2BD1690500F2B508 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		089FF6302BC41432002601DA /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		089FF6332BC41432002601DA /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
 		089FF6352BC41432002601DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		089FF67D2BD00DA6002601DA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0826427E2BD1690500F2B508 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				089FF6822BD00DE2002601DA /* RegistrationView.swift in Sources */,
 				089FF6792BC91A3F002601DA /* NewTweetView.swift in Sources */,
 				089FF6842BD00FE5002601DA /* RoundedShape.swift in Sources */,
+				0826427F2BD1690500F2B508 /* AuthViewModel.swift in Sources */,
 				089FF6662BC7F61A002601DA /* UserRowView.swift in Sources */,
 				089FF6512BC54CF4002601DA /* MainTabView.swift in Sources */,
 				089FF6592BC69CE0002601DA /* NotificationsView.swift in Sources */,
