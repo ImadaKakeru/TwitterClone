@@ -25,19 +25,22 @@ struct SideMenuView: View {
                 UserStatsView()
             }
             .padding(.leading)
-            ForEach(SideMenuViewModel.allCases, id: \.rawValue){ option in
-                HStack(spacing: 16){
-                    Image(systemName: option.imageName)
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                    Text(option.title)
-                        .font(.subheadline)
-                    
-                    // 左に詰める。
-                    Spacer()
+            ForEach(SideMenuViewModel.allCases, id: \.rawValue){ viewModel in
+                if viewModel == .profile{
+                    NavigationLink{
+                        ProfileView()
+                    }label:{
+                        SideMenuRowView(viewModel: viewModel)
+                    }
+                }else if viewModel == .logout{
+                    Button{
+                        print("logout is here")
+                    }label:{
+                        SideMenuRowView(viewModel: viewModel)
+                    }
+                }else{
+                    SideMenuRowView(viewModel: viewModel)
                 }
-                .frame(height: 40)
-                .padding(.horizontal)
             }
 //            .padding(.vertical, 4)
             Spacer()
@@ -47,6 +50,12 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
+        SideMenuView()
+    }
+}
+
+extension SideMenuView{
+    var optionRowView: some View{
         SideMenuView()
     }
 }
