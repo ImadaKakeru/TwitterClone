@@ -11,6 +11,7 @@ struct CustominputField: View {
     //CustominputField関数の引数？
     let imageName: String
     let placeholderText: String
+    let isSecureField: Bool?
     @Binding var text: String
     
     var body: some View {
@@ -22,7 +23,11 @@ struct CustominputField: View {
                     .frame(width:20 , height:30)
                     .foregroundColor(Color(.darkGray))
                 
-                TextField(placeholderText, text: $text)
+                if isSecureField ?? false{
+                    SecureField(placeholderText, text: $text)
+                }else{
+                    TextField(placeholderText, text: $text)
+                }
             }
             
             Divider()
@@ -35,6 +40,9 @@ struct CustominputField: View {
 struct CustominputField_Previews: PreviewProvider {
     // コンストラクタ？
     static var previews: some View {
-        CustominputField(imageName:"envelope",placeholderText: "Email",text: .constant(""))
+        CustominputField(imageName:"envelope",
+                         placeholderText: "Email",
+                         isSecureField: false,
+                         text: .constant(""))
     }
 }
