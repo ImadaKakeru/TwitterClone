@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ContentView: View {
     @State private var showMenu = false
@@ -62,14 +63,19 @@ extension ContentView{
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
             ToolbarItem(placement: .navigationBarLeading){
-                Button{
-                    // togleは論理演算子を反転させるもの。ボタンが押されると、showMenuをtrueにする。
-                    withAnimation(.easeInOut){
-                        showMenu.toggle()
+                if let user = viewModel.currentUser{
+                    Button{
+                        // togleは論理演算子を反転させるもの。ボタンが押されると、showMenuをtrueにする。
+                        withAnimation(.easeInOut){
+                            showMenu.toggle()
+                        }
+                    }label: {
+                        KFImage(URL(string: user.profileImageUrl))
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32, height: 32)
+                            .clipShape(Circle())
                     }
-                }label: {
-                    Circle()
-                        .frame(width: 32, height: 32)
                 }
             }
         }
