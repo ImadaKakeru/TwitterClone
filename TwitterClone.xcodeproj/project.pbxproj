@@ -14,6 +14,8 @@
 		0826427D2BD1659400F2B508 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0826427C2BD1659400F2B508 /* FirebaseStorage */; };
 		0826427F2BD1690500F2B508 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826427E2BD1690500F2B508 /* AuthViewModel.swift */; };
 		082642812BD379E300F2B508 /* ProfilePhotoSelecterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082642802BD379E300F2B508 /* ProfilePhotoSelecterView.swift */; };
+		082642842BD4DDCB00F2B508 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082642832BD4DDCB00F2B508 /* ImagePicker.swift */; };
+		082642862BD4EA5A00F2B508 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082642852BD4EA5A00F2B508 /* ImageUploader.swift */; };
 		089FF6342BC41432002601DA /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089FF6332BC41432002601DA /* TwitterCloneApp.swift */; };
 		089FF6362BC41432002601DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089FF6352BC41432002601DA /* ContentView.swift */; };
 		089FF6382BC41434002601DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089FF6372BC41434002601DA /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		082642732BD1646700F2B508 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0826427E2BD1690500F2B508 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		082642802BD379E300F2B508 /* ProfilePhotoSelecterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelecterView.swift; sourceTree = "<group>"; };
+		082642832BD4DDCB00F2B508 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		082642852BD4EA5A00F2B508 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		089FF6302BC41432002601DA /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		089FF6332BC41432002601DA /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
 		089FF6352BC41432002601DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082642822BD4DDB600F2B508 /* Utiles */ = {
+			isa = PBXGroup;
+			children = (
+				082642832BD4DDCB00F2B508 /* ImagePicker.swift */,
+			);
+			path = Utiles;
+			sourceTree = "<group>";
+		};
 		089FF6272BC41432002601DA = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +117,9 @@
 		089FF6322BC41432002601DA /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
-				089FF6452BC41690002601DA /* Core */,
 				089FF6442BC41607002601DA /* Extensions */,
+				082642822BD4DDB600F2B508 /* Utiles */,
+				089FF6452BC41690002601DA /* Core */,
 				089FF6432BC41603002601DA /* Service */,
 				089FF6422BC415F2002601DA /* Model */,
 				089FF6332BC41432002601DA /* TwitterCloneApp.swift */,
@@ -136,6 +149,7 @@
 		089FF6432BC41603002601DA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				082642852BD4EA5A00F2B508 /* ImageUploader.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -458,8 +472,10 @@
 			files = (
 				089FF65B2BC69D04002601DA /* MessagesView.swift in Sources */,
 				089FF65F2BC6A2E0002601DA /* ProfileView.swift in Sources */,
+				082642842BD4DDCB00F2B508 /* ImagePicker.swift in Sources */,
 				089FF6362BC41432002601DA /* ContentView.swift in Sources */,
 				089FF66D2BC824AF002601DA /* SideMenuRowView.swift in Sources */,
+				082642862BD4EA5A00F2B508 /* ImageUploader.swift in Sources */,
 				089FF64E2BC418EA002601DA /* TweetRowView.swift in Sources */,
 				089FF6892BD01BEC002601DA /* AuthenticaionView.swift in Sources */,
 				082642812BD379E300F2B508 /* ProfilePhotoSelecterView.swift in Sources */,

@@ -16,73 +16,76 @@ struct RegistrationView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        VStack{
-//            NavigationStack {
-//                            List {}
-//                        }
-//                        .navigationDestination(isPresented: $viewModel.didAuthenticateUser) {
-//                            ProfilePhotoSelecterView()
-//            }
-            NavigationLink(destination: ProfilePhotoSelecterView(),
-                           isActive: $viewModel.didAuthenticateUser,
-                           label: { })
-            
-            AuthenticaionView(title1:"Get started" , title2:"Create your account" )
-            
-            VStack(spacing: 40){
-                CustominputField(imageName: "envelope",
-                                 placeholderText: "Email",
-                                 isSecureField: false,
-                                 text: $email)
-                
-                CustominputField(imageName: "person",
-                                 placeholderText: "Username",
-                                 isSecureField: false,
-                                 text: $username)
-                
-                CustominputField(imageName: "person",
-                                 placeholderText: "fullname",
-                                 isSecureField: false,
-                                 text: $fullname)
-                
-                CustominputField(imageName: "lock",
-                                 placeholderText: "Password",
-                                 isSecureField: true,
-                                 text: $password)
-            }
-            .padding(32)
-            
-            Button{
-                viewModel.register(withEmail: email, password: password, fullname:fullname, username: username)
-            }label: {
-                Text("Sign up")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .frame(width:300,height:50)
-                    .background(Color(.systemBlue))
-                    .foregroundColor(.white)
-                    .clipShape(Capsule())
-            }
-            .shadow(color:.gray.opacity(0.5), radius: 10, x:0, y:0)
-            
-            Spacer()
-            
-            Button{
-                presentationMode.wrappedValue.dismiss()
-            }label:{
-                HStack{
-                    Text("Already having account ? ")
-                        .font(.footnote)
-                    Text("Sing In")
-                        .font(.footnote)
+        //VStack{
+            NavigationView{
+                VStack{
+                    NavigationLink(
+                        destination:ProfilePhotoSelecterView(),
+                        isActive: $viewModel.didAuthenticateUser,
+                        label:{EmptyView()})
+                    
+                    AuthenticaionView(title1:"Get started" , title2:"Create your account" )
+                    
+                    VStack(spacing: 40){
+                        CustominputField(imageName: "envelope",
+                                         placeholderText: "Email",
+                                         isSecureField: false,
+                                         text: $email)
+                        
+                        CustominputField(imageName: "person",
+                                         placeholderText: "Username",
+                                         isSecureField: false,
+                                         text: $username)
+                        
+                        CustominputField(imageName: "person",
+                                         placeholderText: "fullname",
+                                         isSecureField: false,
+                                         text: $fullname)
+                        
+                        CustominputField(imageName: "lock",
+                                         placeholderText: "Password",
+                                         isSecureField: true,
+                                         text: $password)
+                    }
+                    .padding(32)
+                    
+                    Button{
+                        viewModel.register(withEmail: email, password: password, fullname:fullname, username: username)
+                    }label: {
+                        Text("Sign up")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .frame(width:300,height:50)
+                            .background(Color(.systemBlue))
+                            .foregroundColor(.white)
+                            .clipShape(Capsule())
+                    }
+                    .shadow(color:.gray.opacity(0.5), radius: 10, x:0, y:0)
+                    
+                    Spacer()
+                    
+                    Button{
+                        presentationMode.wrappedValue.dismiss()
+                    }label:{
+                        HStack{
+                            Text("Already having account ? ")
+                                .font(.footnote)
+                            Text("Sing In")
+                                .font(.footnote)
+                        }
+                        .padding(.bottom)
+                        .foregroundColor(.blue)
+                    }
+                    
                 }
-                .padding(.bottom)
-                .foregroundColor(.blue)
+                .ignoresSafeArea()
+                }
             }
-            
-        }
-        .ignoresSafeArea()
-    }
+//            NavigationLink(destination: ProfilePhotoSelecterView(),
+//                           isActive: $viewModel.didAuthenticateUser,
+//                           label: { })
+//
+    //}
 }
 
 struct RegistrationView_Previews: PreviewProvider {
