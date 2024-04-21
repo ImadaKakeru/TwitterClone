@@ -10,10 +10,10 @@ import Firebase
 
 class AuthViewModel: ObservableObject{
     @Published var userSession: FirebaseAuth.User?
+    @Published var didAuthenticateUser = false
     
     init(){
         self.userSession = Auth.auth().currentUser
-        
         print("DEBUG: user Session is \(self.userSession)")
     }
     
@@ -37,10 +37,10 @@ class AuthViewModel: ObservableObject{
                 return
             }
             guard let user = result?.user else{ return }
-            self.userSession = user
+            //self.userSession = user
             
-            print("DEBUG user access is succeeeded")
-            print("DEBUG: userSession = \(self.userSession)")
+            print("DEBUG Register is succeeeded")
+            print("DEBUG: User is  = \(self.userSession)")
             
             let data = ["email" : email,
                         "username" : username.lowercased(),
@@ -50,7 +50,8 @@ class AuthViewModel: ObservableObject{
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data){ _ in
-                    print("DEBUG: Did upload user info...")
+                    self.didAuthenticateUser = true
+                    print("didAuthenticateUser = \(self.didAuthenticateUser)")
                 }
         }
     }

@@ -16,6 +16,7 @@ struct ContentView: View {
         Group{
             // if use no logged in
             if viewModel.userSession == nil{
+                //print("DEBUG: view Login View")
                 LoginView()
             }else{
                 // have logged in

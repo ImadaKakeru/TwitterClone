@@ -14,8 +14,19 @@ struct RegistrationView: View {
     @State private var password = ""
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         VStack{
+//            NavigationStack {
+//                            List {}
+//                        }
+//                        .navigationDestination(isPresented: $viewModel.didAuthenticateUser) {
+//                            ProfilePhotoSelecterView()
+//            }
+            NavigationLink(destination: ProfilePhotoSelecterView(),
+                           isActive: $viewModel.didAuthenticateUser,
+                           label: { })
+            
             AuthenticaionView(title1:"Get started" , title2:"Create your account" )
             
             VStack(spacing: 40){
