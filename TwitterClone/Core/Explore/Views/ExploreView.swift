@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @ObservedObject var viewModel  = SearchViewModel()
     var body: some View {
 
         VStack{
             ScrollView{
                 LazyVStack{
-                    ForEach(0 ... 25, id: \.self){ _ in
+                    ForEach(viewModel.users){ user in
                         // UserRowViewにProfileViewに飛ぶリンクを作成する。
                         NavigationLink{
-//                               ProfileView()
+                               ProfileView(user: user)
                         }label: {
-                            UserRowView()
+                            UserRowView(user: user)
                         }
                     }
                 }
