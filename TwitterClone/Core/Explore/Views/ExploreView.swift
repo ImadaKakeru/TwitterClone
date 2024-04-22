@@ -9,12 +9,16 @@ import SwiftUI
 
 struct ExploreView: View {
     @ObservedObject var viewModel  = SearchViewModel()
+    //@State private var searchText = ""
+    
     var body: some View {
 
         VStack{
+            SearchBar(text: $viewModel.searchText)
+                .padding()
             ScrollView{
                 LazyVStack{
-                    ForEach(viewModel.users){ user in
+                    ForEach(viewModel.searchbleUsers){ user in
                         // UserRowViewにProfileViewに飛ぶリンクを作成する。
                         NavigationLink{
                                ProfileView(user: user)
